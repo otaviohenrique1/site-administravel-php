@@ -5,20 +5,20 @@
         // $route = '/^\/([a-z]+)$/';
         $route = '/^' . str_replace('/', '\/', $route) . '$/';
         
-        if (preg_match($route, '/')) {
-            echo 'encontrou';
-        } else {
-            echo 'não encontrou';
+        if (preg_match($route, $path, $params)) {
+            return $params;
         }
+        return false;
     }
     
-    resolve('/');
-    resolve('/admin');
+    function render($content, $template, array $data)
+    {
+        return include __DIR__ . '/templates/' . $template . 'tpl.php';
+    }
 
-    // if ($path == '/') {
-    //     require __DIR__ . '/site/routes.php';
-    // } elseif ($path == '/admin') {
-    //     require __DIR__ . '/admin/routes.php';
-    // } else {
-    //     echo 'Página não encontrada';
-    // }
+    if (resolve('/admin/?(.*)')) {
+        // . -> qualquer caractere
+        require __DIR__ . '/admin/routes.php';
+    } elseif (resolve('/(.*)')) {
+        require __DIR__ . '/site/routes.php';
+    }
