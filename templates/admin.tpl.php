@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Painel administrativo</title>
         <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/resources/trix/trix.css">
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body class="d-flex flex-column">
@@ -40,5 +41,6 @@
         <script src="/js/jquery-3.5.1.min.js"></script>
         <script src="https://unpkg.com/@popperjs/core@2"></script>
         <script src="/js/bootstrap.min.js"></script>
+        <script src="/resources/trix/trix.js"></script>
     </body>
 </html>
